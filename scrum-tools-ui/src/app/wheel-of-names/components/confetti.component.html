@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 100">
+  @for (c of snippets; track $index) {
+  <rect [attr.x]="c.startX" [attr.y]="c.startY" [attr.width]="c.width" [attr.height]="c.height" fill="red" />
+  }
+</svg>

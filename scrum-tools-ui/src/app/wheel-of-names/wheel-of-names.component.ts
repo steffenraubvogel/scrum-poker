@@ -5,13 +5,14 @@ import { FormsModule } from "@angular/forms";
 import { Routes } from "@angular/router";
 import * as bootstrap from "bootstrap";
 import { timer } from "rxjs";
+import { ConfettigComponent } from "./components/confetti.component";
 import { NamesEditorComponent } from "./components/names-editor.component";
 import { NameItem, NamesService } from "./service/names.service";
 
 @Component({
   selector: "app-wheel",
   standalone: true,
-  imports: [CommonModule, FormsModule, NamesEditorComponent],
+  imports: [CommonModule, FormsModule, NamesEditorComponent, ConfettigComponent],
   providers: [NamesService],
   templateUrl: "./wheel-of-names.component.html",
   styleUrl: "./wheel-of-names.component.scss",
@@ -22,7 +23,7 @@ export class WheelComponent implements OnInit {
 
   public rotating = false;
   public targetRotation = Math.random() * 360; // in degrees
-  public rotationDuration = 4; // in seconds
+  public rotationDuration = 0.25; // in seconds
 
   private winnerDialog!: bootstrap.Modal;
   public winner?: WheelItem;
